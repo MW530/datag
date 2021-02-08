@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Home from '../views/Home.vue';
+import Commodity from '../views/Commodity.vue';
+import Login from '../views/Login.vue'
 
 Vue.use(VueRouter);
 
@@ -8,7 +9,17 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home,
+    redirect: '/commodity',
+  },
+  {
+    path: '/commodity',
+    name: 'commodity',
+    component: Commodity,
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: Login,
   },
   {
     path: '/about',

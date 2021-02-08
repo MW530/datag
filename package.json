@@ -5,10 +5,15 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "blib":"vue-cli-service build --target lib --name datag src/lib/index.js"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "core-js": "^3.6.5",
+    "element-ui": "^2.4.5",
+    "mockjs": "^1.1.0",
+    "sass-loader": "^10.1.1",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
     "vuex": "^3.4.0"
@@ -25,6 +30,7 @@
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-vue": "^6.2.2",
     "lint-staged": "^9.5.0",
+    "vue-cli-plugin-element": "^1.0.1",
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {
@@ -39,7 +45,44 @@
     "parserOptions": {
       "parser": "babel-eslint"
     },
-    "rules": {}
+    "rules": {
+      "no-console": "off",
+      "no-irregular-whitespace": "off",
+      "comma-dangle": "off",
+      "space-before-function-paren": "off",
+      "prefer-template": "off",
+      "space-before-blocks": "off",
+      "eol-last": "off",
+      "semi": "off",
+      "no-restricted-syntax": "off",
+      "prefer-const": "off",
+      "guard-for-in": "off",
+      "no-plusplus": "off",
+      "operator-linebreak": "off",
+      "linebreak-style": "off",
+      "prefer-destructuring": "off",
+      "no-unneeded-ternary": "off",
+      "no-unreachable": "off",
+      "function-paren-newline": "off",
+      "func-names": "off",
+      "no-param-reassign": "off",
+      "object-shorthand": "off",
+      "import/prefer-default-export": "off",
+      "no-unused-expressions": "off",
+      "max-len": "off",
+      "no-trailing-spaces": "off",
+      "indent": "off",
+      "spaced-comment": "off",
+      "dot-notation": "off",
+      "no-else-return": "off",
+      "keyword-spacing": "off",
+      "no-restricted-globals": "off",
+      "no-multi-spaces": "off",
+      "arrow-body-style": "off",
+      "no-debugger": "off",
+      "no-cond-assign": "off",
+      "no-underscore-dangle": "off"
+    }
   },
   "browserslist": [
     "> 1%",
