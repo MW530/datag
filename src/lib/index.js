@@ -20,10 +20,13 @@ datag.install = function (Vue) {
   Vue.prototype.$datag = $datag
   Vue.directive('listen', {
     bind: function (el, binding) {
-      el.dataset.glisten = `glisten_${binding.arg}`
-      el.dataset.gtype = binding.value
-      el.classList.add(`glisten_${binding.arg}`); 
-      beginMonitor(binding.arg, 'bottom', Vue.prototype.$datag)
+      let mainType = binding.arg
+      el.dataset.glisten = `glisten_${mainType}`
+      let direction = binding.value.direction
+      let subType = binding.value.subType
+      el.dataset.gtype = subType
+      el.classList.add(`glisten_${binding.arg}`);
+      beginMonitor(mainType, direction, Vue.prototype.$datag)
     }
   })
   beginStatistic(Vue.prototype.$datag.clickData)

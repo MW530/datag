@@ -10,7 +10,7 @@
           :title="item.name"
           :description="item.description"
           :imgSrc="item.imgSrc"
-          v-listen:summer="item.type"
+          v-listen:summer="{direction: 'bottom', subType: item.type}"
           @click.native="logCard(item)"
         ></ComCommodity>
       </el-main>

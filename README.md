@@ -44,7 +44,7 @@ Third: register the command `v-listen` to the item you`d like to monitor.
 
 ```vue
 <Item
-v-listen:[parantType] = "[subType]"
+v-listen:[parantType] = "{direction: [direction], subType: [subType]}"
 >
 </Item>
 ```
@@ -53,9 +53,22 @@ v-listen:[parantType] = "[subType]"
 
 ## Description
 
-datag registered a `vue` command named `v-listen`,and it is use on the item you`d like to monitor.
+datag registered a `Vue` command named `v-listen`,and it is use on the item you`d like to monitor.
 
-and you are suppose to pass the parentType to the arg of the command(`v-listen:[parentType]`),and pass the subType to the value of the command(`v-listen:[parentType] = [subType]`).
+and you are suppose to pass the parentType to the arg of the command(`v-listen:[parentType]`),and pass the subType to the value of the command(`v-listen:[parentType] = "{direction: [direction], subType: [subType]}"`)。
+
+`direction`：
+
+- description: datag can monitor visible items and this property controls whether direction datag divide important part.
+- default: 'bottom'
+- value:
+  - 'bottom': from bottom
+  - 'top': from top
+
+`subType`: 
+
+- description:  the sub type of your data.
+- required
 
 
 
@@ -179,7 +192,7 @@ let scrollData = this.$datag.watchData()
 It will return the row data of scroll includes:
 
 	1. `timeGap`: the time gap user watched this time.
- 	2. `vatalType`: the sub types remain in the visible part.
+	2. `vatalType`: the sub types remain in the visible part.
 
 
 
